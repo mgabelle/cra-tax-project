@@ -30,8 +30,11 @@ function timeToMinute(time) {
 }
 
 async function logTime() {
- var time = await getTime(); 
-  console.log("Time : " + time + " (minutes:" + timeToMinute(time) +")");
-}
+  var time = await getTime();
+  var date = new Date();
+   console.log(date.toLocaleTimeString());
+   console.log("Wait time: " + time + " (min:" + timeToMinute(time) +")");
+   console.log("\n");
+ }
 
 setInterval(logTime, 300000);
